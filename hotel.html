@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grand Palace Hotel</title>
+</head>
+<body>
+
+  <!-- ====== Header ====== -->
+  <header>
+    <div class="logo">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSozvb9EwXpvE6kmZ16QN2VWecZHpGaBmnXvg&s" alt="Hotel Logo">
+      <h2>Grand Palace Hotel</h2>
+    </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#rooms">Rooms</a>
+      <a href="#booking">Booking</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ====== Home Section ====== -->
+  <section id="home">
+    <h1>Welcome to <span class="highlight">Grand Palace Hotel</span></h1>
+    <p>📍 Location: Jagdalpur, Chhattisgarh</p>
+    <button onclick="showMessage()">Click to Know More</button>
+    <p id="info"></p>
+  </section>
+
+  <!-- ====== Rooms Section ====== -->
+  <section id="rooms">
+    <h2>Our Rooms</h2>
+    <div class="room-section">
+      <div class="room">
+        <h3>Deluxe Room</h3>
+        <p>Spacious and comfortable with all modern facilities.</p>
+        <button onclick="bookNow('Deluxe Room')">Book Now</button>
+      </div>
+
+      <div class="room">
+        <h3>Suite Room</h3>
+        <p>Luxury suite with premium services and comfort.</p>
+        <button onclick="bookNow('Suite Room')">Book Now</button>
+      </div>
+      
+      <div class="room">
+        <h3>Family Room</h3>
+        <p>Perfect choice for a family stay with great amenities.</p>
+        <button onclick="bookNow('Family Room')">Book Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Booking Section ====== -->
+  <section id="booking">
+    <h2>Book Your Stay</h2>
+    <form onsubmit="return confirmBooking(event)">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="roomType">Room Type:</label>
+      <select id="roomType" required>
+        <option value="Deluxe">Deluxe Room</option>
+        <option value="Suite">Suite Room</option>
+        <option value="Family">Family Room</option>
+      </select>
+
+      <label for="date">Check-in Date:</label>
+      <input type="date" id="date" required>
+
+      <button type="submit">Confirm Booking</button>
+    </form>
+  </section>
+
+  <!-- ====== Gallery Section ====== -->
+<section id="gallery">
+  <h2>Our Gallery</h2>
+  <div class="gallery-images">
+    <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/7832493.jpg?k=eddcc5372368ca7a2d4e5c91e0ed357cb588d34c791e68c3528a2a17af66e326&o=&hp=1" alt="Hotel Lobby">
+    <img src="https://www.tnktravel.com/wp-content/uploads/2013/12/Grand-Palace-Hotel-Yangon.jpg" alt="Luxury Room">
+    <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Restaurant">
+    <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Swimming Pool">
+    <img src="https://images.unsplash.com/photo-1505691723518-36a5ac3be353?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hotel Exterior">
+    <img src="https://www.chitkara.edu.in/blogs/wp-content/uploads/2024/05/How-to-Become-a-Chef.jpg" alt="Reception">
+  </div>
+</section>
+
+
+  <!-- ====== Contact Section ====== -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: info@grandpalace.com</p>
+    <p>Phone: +91 98765 43210</p>
+  </section>
+
+
+  <!-- ====== Footer ====== -->
+<footer>
+  <p>© 2025 Grand Palace Hotel | All Rights Reserved</p>
+</footer>
+
+  <!-- ====== JavaScript ====== -->
+  <script>
+    function showMessage() {
+      document.getElementById("info").innerHTML = "✨ Our hotel offers luxury rooms, delicious food, and the best service!";
+      document.getElementById("info").style.color = "red";
+      document.getElementById("info").style.fontWeight = "bold";
+      document.getElementById("info").style.fontSize = "50px";
+    }
+
+    function bookNow(roomName) {
+      alert("You have selected: " + roomName);
+    }
+
+    function confirmBooking(event) {
+      event.preventDefault();
+      let name = document.getElementById("name").value;
+      let room = document.getElementById("roomType").value;
+      let date = document.getElementById("date").value;
+      alert("Thank you " + name + "! Your " + room + " is booked for " + date + ".");
+      return false;
+    }
+  </script>
+
+
+<style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(90deg, #e67e22, #d35400);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      padding-left: 100px;
+    }
+
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
+      border-radius: 50px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding-right: 50px;
+      gap: 3rem;
+      
+
+    }
+
+    nav a:hover {
+      color: yellow;
+    }
+
+    /* Home Section */
+    #home {
+      height: 100vh;
+      background: url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80") no-repeat center center/cover;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+
+    #home h1 {
+      font-size: 55px;
+      text-shadow: 2px 2px 8px black;
+    }
+
+    #home button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      border: none;
+      background: #e67e22;
+      color: white;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 2px 2px 8px black;
+    }
+
+    #home button:hover {
+      background: #d35400;
+    }
+
+    /* Rooms Section */
+    #rooms {
+      padding: 60px 20px;
+      text-align: center;
+      background: linear-gradient(120deg, #f1c40f, #f39c12);
+    }
+
+    .room-section {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .room {
+      border: none;
+      border-radius: 10px;
+      padding: 20px;
+      width: 28%;
+      margin: 10px;
+      background: white;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .room h3 {
+      color: #2c3e50;
+    }
+
+    .room button {
+      background: #27ae60;
+      margin-top: 10px;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .room button:hover {
+      background: #219150;
+    }
+
+    /* Booking Section */
+    #booking {
+      padding: 60px 20px;
+      text-align: center;
+      background: linear-gradient(120deg, #3498db, #2980b9);
+      color: white;
+    }
+
+    #booking form {
+      max-width: 400px;
+      margin: auto;
+      text-align: left;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      color: black;
+    }
+
+    #booking input, #booking select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    #booking button {
+      width: 100%;
+      padding: 12px;
+      background: #27ae60;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    #booking button:hover {
+      background: #219150;
+    }
+
+    /* Gallery Section */
+    #gallery {
+      padding: 60px 20px;
+      background: linear-gradient(120deg, #9b59b6, #8e44ad);
+      text-align: center;
+      color: white;
+    }
+
+    .gallery-images {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .gallery-images img {
+      width: 30%;
+      border-radius: 8px;
+      margin: 10px;
+      box-shadow: 2px 2px 8px black;
+      transition: transform 0.3s;
+    }
+
+    .gallery-images img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Contact Section */
+    #contact {
+      padding: 60px 20px;
+      text-align: center;
+      background: #34495e;
+      color: white;
+    }
+
+
+    /* Footer */
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+  </style>
+</body>
+</html>
